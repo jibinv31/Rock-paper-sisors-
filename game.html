@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rock, Paper, Scissors Game</title>
+    <style>
+        /* General body styling */
+        body {
+            font-family: 'Arial', sans-serif;
+            /* Font style */
+            text-align: center;
+            /* Center text alignment */
+            background-color: #1a1a1a;
+            /* Default dark background color */
+            color: #f0f0f0;
+            /* Light text color for contrast */
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        /* Container styling */
+        .container {
+            background-color: rgba(0, 0, 0, 0.8);
+            /* Semi-transparent black background */
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0px 0px 15px rgba(255, 69, 0, 0.7);
+            /* Fiery orange shadow */
+            max-width: 400px;
+            width: 100%;
+        }
+
+        /* Heading styling */
+        h1 {
+            margin-bottom: 20px;
+            font-size: 32px;
+            color: #e74c3c;
+            /* Fiery red color */
+        }
+
+        /* Button styling */
+        button {
+            padding: 15px 30px;
+            margin: 10px;
+            font-size: 18px;
+            color: #1a1a1a;
+            /* Dark text color */
+            background-color: #f0f0f0;
+            /* Light button color */
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.2s;
+        }
+
+        /* Button hover effect */
+        button:hover {
+            background-color: #e74c3c;
+            /* Fiery red color on hover */
+            color: #f0f0f0;
+            /* Light text color on hover */
+            transform: translateY(-3px);
+            /* Lift button on hover */
+        }
+
+        /* Result text styling */
+        #result p {
+            font-size: 20px;
+            margin: 10px 0;
+        }
+
+        /* Play Again button initial styling */
+        #play-again {
+            display: none;
+            /* Hidden by default */
+        }
+
+        /* Start button initial styling */
+        #start-game {
+            display: block;
+            /* Visible by default */
+        }
+
+        /* Game choices and result container */
+        #choices,
+        #result,
+        #sparta-container {
+            display: none;
+            /* Hidden by default */
+        }
+
+        /* Theme selector styling */
+        #theme-selector {
+            margin-bottom: 20px;
+        }
+
+        /* Fiery theme specific styling */
+        .fiery {
+            background-color: #1a1a1a;
+            /* Dark background for fiery theme */
+            color: #e74c3c;
+            /* Fiery red text color */
+        }
+
+        /* Hellish theme specific styling */
+        .hellish {
+            background-color: #2e2e2e;
+            /* Darker background for hellish theme */
+            color: #ff4500;
+            /* Bright orange-red text color */
+        }
+
+        /* Funny theme specific styling */
+        .funny {
+            background-color: #f0f0f0;
+            /* Light background for funny theme */
+            color: #333;
+            /* Dark text color */
+        }
+
+        .funny h1 {
+            color: #ff69b4;
+            /* Bright pink for funny theme */
+        }
+
+        .funny button {
+            background-color: #ff69b4;
+            /* Pink buttons */
+            color: #fff;
+            /* White text */
+        }
+
+        .funny button:hover {
+            background-color: #ff1493;
+            /* Darker pink on hover */
+        }
+
+        .funny p {
+            font-family: 'Comic Sans MS', cursive;
+            /* Comic font for a humorous effect */
+        }
+
+        /* Sparta quote styling */
+        #sparta-container p {
+            font-size: 24px;
+            margin: 20px 0;
+            font-weight: bold;
+            color: #e74c3c;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Rock, Paper, Scissors</h1>
+
+        <!-- Theme selector -->
+        <select id="theme-selector" onchange="changeTheme()">
+            <option value="fiery">Fiery</option>
+            <option value="hellish">Hellish</option>
+            <option value="funny">Funny</option>
+        </select>
+
+        <!-- Start game button -->
+        <button id="start-game" onclick="startGame()">Start Game</button>
+
+        <!-- Game choices buttons -->
+        <div id="choices">
+            <button onclick="playGame('rock')">Rock</button>
+            <button onclick="playGame('paper')">Paper</button>
+            <button onclick="playGame('scissors')">Scissors</button>
+        </div>
+
+        <!-- Result display -->
+        <div id="result">
+            <p id="user-choice"></p>
+            <p id="computer-choice"></p>
+            <p id="game-result"></p>
+        </div>
+
+        <!-- Play again button -->
+        <button id="play-again" onclick="resetGame()">Play Again</button>
+
+        <!-- Sparta image and quote container -->
+        <div id="sparta-container">
+            <p>This is Sparta!</p>
+        </div>
+    </div>
+
+    <script src="game.js"></script>
+</body>
+
+</html>
